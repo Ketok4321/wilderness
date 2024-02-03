@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "wilderness",
+  "version": "${version}",
+  "name": "Wilderness",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Ketok"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "Insert License Here",
+  "icon": "assets/wilderness/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "xyz.ketok.wilderness.fabric.WildernessFabric"
+    ]
+  },
+  "mixins": [
+    "wilderness.mixins.json",
+    "wilderness-common.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "minecraft": ">=1.20.1",
+    "architectury": ">=9.1.12"
+  }
+}
