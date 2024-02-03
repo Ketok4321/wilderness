@@ -1,28 +1,16 @@
 package xyz.ketok.wilderness;
 
-import com.google.common.base.Suppliers;
-import dev.architectury.registry.CreativeTabRegistry;
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrarManager;
-import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-
-import java.util.function.Supplier;
+import dev.architectury.event.events.common.LifecycleEvent;
+import xyz.ketok.wilderness.registry.WdBlocks;
+import xyz.ketok.wilderness.registry.WdItems;
 
 public class Wilderness {
     public static final String MOD_ID = "wilderness";
-    // We can use this if we don't want to use DeferredRegister
-    public static final Supplier<RegistrarManager> REGISTRIES = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
-    
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
-    public static final RegistrySupplier<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () ->
-            new Item(new Item.Properties()));
     
     public static void init() {
-        ITEMS.register();
+        WdBlocks.BLOCKS.register();
+        WdItems.ITEMS.register();
+
+        LifecycleEvent.SETUP.register(WdBlocks::setup);
     }
 }
