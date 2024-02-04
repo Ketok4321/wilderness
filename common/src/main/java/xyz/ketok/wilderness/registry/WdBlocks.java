@@ -10,6 +10,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import xyz.ketok.wilderness.Wilderness;
@@ -30,6 +31,10 @@ public class WdBlocks {
         }
 
         AxeItem.STRIPPABLES.put(MOSSY_OAK_LOG.get(), Blocks.OAK_LOG);
+
+        FireBlock fire = (FireBlock) Blocks.FIRE;
+        fire.setFlammable(MOSSY_OAK_LOG.get(), 5, 5);
+        fire.setFlammable(MOSSY_OAK_WOOD.get(), 5, 5);
     }
 
     private static <T extends Block> RegistrySupplier<T> blockItem(String id, Supplier<T> block) {
