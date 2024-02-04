@@ -27,3 +27,9 @@ publishing {
         // Add repositories to publish to here.
     }
 }
+
+sourceSets {
+    main {
+        resources.srcDir file("src/generated/resources")
+    }
+}

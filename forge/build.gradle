@@ -17,6 +17,15 @@ loom {
         mixinConfig "wilderness-common.mixins.json"
         mixinConfig "wilderness.mixins.json"
     }
+
+    runs {
+        data {
+            data()
+            programArgs "--all", "--mod", "wilderness"
+            programArgs "--output", file("../common/src/generated/resources").absolutePath
+            programArgs "--existing", file("../common/src/main/resources").absolutePath
+        }
+    }
 }
 
 configurations {
