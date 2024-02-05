@@ -1,0 +1,44 @@
+{
+  "type": "wilderness:fallen_tree",
+  "config": {
+    "block": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "wilderness:mossy_oak_log",
+            "Properties": {
+              "axis": "y"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "Name": "minecraft:oak_log",
+            "Properties": {
+              "axis": "y"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "decorators": [
+      {
+        "type": "wilderness:block_on_fallen_log",
+        "block": {
+          "Name": "minecraft:moss_carpet"
+        },
+        "chance": 0.4
+      }
+    ],
+    "length": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 6,
+        "min_inclusive": 5
+      }
+    }
+  }
+}

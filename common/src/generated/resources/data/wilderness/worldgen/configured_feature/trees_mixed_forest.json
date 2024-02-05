@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "wilderness:medium_oak",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "minecraft:spruce_checked"
+      },
+      {
+        "chance": 0.1,
+        "feature": "minecraft:oak_bees_002"
+      }
+    ]
+  }
+}

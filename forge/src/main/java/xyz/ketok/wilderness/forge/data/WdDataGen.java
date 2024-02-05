@@ -10,6 +10,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import xyz.ketok.wilderness.Wilderness;
+import xyz.ketok.wilderness.forge.data.server.worldgen.WdRegistryProvider;
 
 @Mod.EventBusSubscriber(modid = Wilderness.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WdDataGen {
@@ -28,6 +29,8 @@ public class WdDataGen {
             WdBlockTagsProvider blockTags = new WdBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
             generator.addProvider(event.includeServer(), blockTags);
             generator.addProvider(event.includeServer(), new WdItemTagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+
+            generator.addProvider(event.includeServer(), new WdRegistryProvider(packOutput, lookupProvider));
         }
 
         // Client
