@@ -1,6 +1,7 @@
 package xyz.ketok.wilderness;
 
 import dev.architectury.event.events.common.LifecycleEvent;
+import xyz.ketok.wilderness.other.WdBiomeModifications;
 import xyz.ketok.wilderness.registry.WdBlocks;
 import xyz.ketok.wilderness.registry.WdFeatures;
 import xyz.ketok.wilderness.registry.WdItems;
@@ -15,5 +16,6 @@ public class Wilderness {
         WdFeatures.TreeDecorators.DECORATORS.register();
 
         LifecycleEvent.SETUP.register(WdBlocks::setup);
+        LifecycleEvent.SETUP.register(WdBiomeModifications::setup);
     }
 }
