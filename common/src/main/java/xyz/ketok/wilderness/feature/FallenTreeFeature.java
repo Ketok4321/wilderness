@@ -84,25 +84,17 @@ public class FallenTreeFeature extends Feature<FallenTreeFeature.Config> {
     }
 
     private boolean canPlace(WorldGenLevel level, BlockPos startPos, int length, Direction direction, boolean generateStump) {
-        // Is there place for a stump?
         if(generateStump) {
-            if(!canPlaceOn(level, startPos)) return false;
-
-            startPos = startPos.relative(direction, 2);
+            length += 2;
         }
 
-        // Is there place for a log?
         for(int i = 0; i < length; i++) {
             BlockPos pos = startPos.relative(direction, i);
 
-            if(!canPlaceOn(level, pos)) return false;
+            if(!TreeFeature.validTreePos(level, pos) || !isDirt(level.getBlockState(pos.below()))) return false;
         }
 
         return true;
-    }
-
-    private boolean canPlaceOn(WorldGenLevel level, BlockPos pos) {
-        return TreeFeature.validTreePos(level, pos) && level.getBlockState(pos.above()).isAir();
     }
 
     private Direction getValidDirection(WorldGenLevel level, BlockPos startPos, int length, boolean generateStump) {

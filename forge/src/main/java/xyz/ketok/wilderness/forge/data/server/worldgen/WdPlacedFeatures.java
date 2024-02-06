@@ -38,10 +38,10 @@ public class WdPlacedFeatures {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         var configured = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        context.register(FALLEN_OAK, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_OAK), RarityFilter.onAverageOnceEvery(8))); //TODO: Tree threshold?
-        context.register(FALLEN_BIRCH, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_BIRCH), RarityFilter.onAverageOnceEvery(8)));
-        context.register(FALLEN_SPRUCE, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_SPRUCE), RarityFilter.onAverageOnceEvery(8)));
-        context.register(FALLEN_JUNGLE_TREE, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_JUNGLE_TREE), RarityFilter.onAverageOnceEvery(8)));
+        context.register(FALLEN_OAK, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_OAK), RarityFilter.onAverageOnceEvery(8), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING))); //TODO: Tree threshold?
+        context.register(FALLEN_BIRCH, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_BIRCH), RarityFilter.onAverageOnceEvery(8), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        context.register(FALLEN_SPRUCE, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_SPRUCE), RarityFilter.onAverageOnceEvery(8), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        context.register(FALLEN_JUNGLE_TREE, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.FALLEN_JUNGLE_TREE), RarityFilter.onAverageOnceEvery(8), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 
         context.register(MEDIUM_OAK, treeFeature(configured.getOrThrow(WdConfiguredFeatures.MEDIUM_OAK)));
         context.register(MOSSY_FANCY_OAK, treeFeature(configured.getOrThrow(WdConfiguredFeatures.MOSSY_FANCY_OAK)));
@@ -49,7 +49,7 @@ public class WdPlacedFeatures {
         context.register(TREES_OLD_GROWTH_FOREST, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.TREES_OLD_GROWTH_FOREST), CountPlacement.of(10)));
         context.register(TREES_MIXED_FOREST, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.TREES_MIXED_FOREST), CountPlacement.of(8)));
 
-        context.register(BROWN_RED_MUSHROOM_PATCH, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.BROWN_RED_MUSHROOM_PATCH), CountPlacement.of(3), RarityFilter.onAverageOnceEvery(2)));
+        context.register(BROWN_RED_MUSHROOM_PATCH, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.BROWN_RED_MUSHROOM_PATCH), CountPlacement.of(3)));
         context.register(FOREST_ROCK_RARE, surfaceFeature(configured.getOrThrow(MiscOverworldFeatures.FOREST_ROCK), RarityFilter.onAverageOnceEvery(4)));
 
         context.register(PATCH_COARSE_DIRT, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.PATCH_COARSE_DIRT), CountPlacement.of(2)));
@@ -61,10 +61,11 @@ public class WdPlacedFeatures {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Wilderness.MOD_ID, name));
     }
 
-    private static PlacedFeature surfaceFeature(Holder<ConfiguredFeature<?, ?>> feature, PlacementModifier... placementModifiers) {
+    private static PlacedFeature surfaceFeature(Holder<ConfiguredFeature<?, ?>> feature, PlacementModifier countOrRarity, PlacementModifier... placementModifiers) {
         ArrayList<PlacementModifier> modifiers = new ArrayList<>();
+        modifiers.addAll(List.of(countOrRarity, InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR));
         Collections.addAll(modifiers, placementModifiers);
-        modifiers.addAll(List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome()));
+        modifiers.add(BiomeFilter.biome());
         return new PlacedFeature(feature, modifiers);
     }
 
