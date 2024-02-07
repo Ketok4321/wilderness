@@ -1,3 +1,4 @@
-// 1.20.1	2024-02-04T19:04:00.009084933	Loot Tables
+// 1.20.1	2024-02-07T01:36:58.493795399	Loot Tables
 d2f09e081b27f25acb7b5e42d15a1b9542f49ffb data/wilderness/loot_tables/blocks/mossy_oak_log.json
 10a433bfbfbedd1ec7d15e103bcfdefa92d56516 data/wilderness/loot_tables/blocks/mossy_oak_wood.json
+e3acb96db966813c2b3d1a8283dde9bbc1a533f8 data/wilderness/loot_tables/blocks/shelf_mushroom.json
