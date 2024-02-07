@@ -60,8 +60,8 @@ public class WdConfiguredFeatures {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         var placed = context.lookup(Registries.PLACED_FEATURE);
 
-        context.register(FALLEN_OAK, fallenTree(() -> BlockStateProviders.MOSSY_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
-        context.register(FALLEN_BIRCH, fallenTree(() -> BlockStateProvider.simple(Blocks.BIRCH_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
+        context.register(FALLEN_OAK, fallenTree(() -> BlockStateProviders.MOSSY_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
+        context.register(FALLEN_BIRCH, fallenTree(() -> BlockStateProvider.simple(Blocks.BIRCH_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
         context.register(FALLEN_SPRUCE, fallenTree(() -> BlockStateProvider.simple(Blocks.SPRUCE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
         context.register(FALLEN_JUNGLE_TREE, fallenTree(() -> BlockStateProvider.simple(Blocks.JUNGLE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.5F), TrunkVineDecorator.INSTANCE));
 
@@ -74,7 +74,7 @@ public class WdConfiguredFeatures {
         ).ignoreVines().build()));
 
         context.register(MOSSY_FANCY_OAK, new ConfiguredFeature<>(Feature.TREE, createFancyOak(BlockStateProviders.MOSSY_OAK_LOG)
-                .decorators(List.of(new BeehiveDecorator(0.02F)))
+                .decorators(List.of(new BeehiveDecorator(0.02F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.02F)))
                 .build()
         ));
 

@@ -49,7 +49,7 @@ public class WdPlacedFeatures {
         context.register(TREES_OLD_GROWTH_FOREST, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.TREES_OLD_GROWTH_FOREST), CountPlacement.of(10)));
         context.register(TREES_MIXED_FOREST, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.TREES_MIXED_FOREST), CountPlacement.of(8)));
 
-        context.register(BROWN_RED_MUSHROOM_PATCH, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.BROWN_RED_MUSHROOM_PATCH), CountPlacement.of(3)));
+        context.register(BROWN_RED_MUSHROOM_PATCH, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.BROWN_RED_MUSHROOM_PATCH), null));
         context.register(FOREST_ROCK_RARE, surfaceFeature(configured.getOrThrow(MiscOverworldFeatures.FOREST_ROCK), RarityFilter.onAverageOnceEvery(4)));
 
         context.register(PATCH_COARSE_DIRT, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.PATCH_COARSE_DIRT), CountPlacement.of(2)));
@@ -63,7 +63,8 @@ public class WdPlacedFeatures {
 
     private static PlacedFeature surfaceFeature(Holder<ConfiguredFeature<?, ?>> feature, PlacementModifier countOrRarity, PlacementModifier... placementModifiers) {
         ArrayList<PlacementModifier> modifiers = new ArrayList<>();
-        modifiers.addAll(List.of(countOrRarity, InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR));
+        if (countOrRarity != null) modifiers.add(countOrRarity);
+        modifiers.addAll(List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR));
         Collections.addAll(modifiers, placementModifiers);
         modifiers.add(BiomeFilter.biome());
         return new PlacedFeature(feature, modifiers);

@@ -5,6 +5,17 @@
       {
         "type": "minecraft:beehive",
         "probability": 0.02
+      },
+      {
+        "type": "wilderness:block_on_log",
+        "block": {
+          "Name": "wilderness:shelf_mushroom",
+          "Properties": {
+            "facing": "north"
+          }
+        },
+        "chance": 0.02,
+        "on_top": false
       }
     ],
     "dirt_provider": {

@@ -41,7 +41,7 @@
             "facing": "north"
           }
         },
-        "chance": 0.25,
+        "chance": 0.2,
         "on_top": false
       }
     ],
