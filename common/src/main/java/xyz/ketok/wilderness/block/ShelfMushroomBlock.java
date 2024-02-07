@@ -33,7 +33,10 @@ public class ShelfMushroomBlock extends HorizontalDirectionalBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(FACING, context.getClickedFace());
+        return switch (context.getClickedFace()) {
+            default -> this.defaultBlockState().setValue(FACING, context.getClickedFace());
+            case UP, DOWN -> null;
+        };
     }
 
     @Override
