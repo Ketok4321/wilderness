@@ -43,7 +43,7 @@ public class WdLootTableProvider extends LootTableProvider {
         protected void generate() {
             WdDataGenUtil.wdBlockItems().forEach(this::dropSelf); // These can be overriden later
 
-            add(WdBlocks.SHELF_MUSHROOM.get(), createShearsOnlyDrop(WdBlocks.SHELF_MUSHROOM.get().asItem()));
+            add(WdBlocks.SHELF_MUSHROOM.get(), createShearsOnlyDrop(WdBlocks.SHELF_MUSHROOM.get().asItem())); //TODO: Forge tool actions + fabric equivalent
         }
 
         @Override
