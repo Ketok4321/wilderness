@@ -12,14 +12,15 @@
     },
     "decorators": [
       {
-        "type": "minecraft:trunk_vine"
-      },
-      {
-        "type": "wilderness:block_on_fallen_log",
+        "type": "wilderness:block_on_log",
         "block": {
           "Name": "minecraft:moss_carpet"
         },
-        "chance": 0.5
+        "chance": 0.5,
+        "on_top": true
+      },
+      {
+        "type": "minecraft:trunk_vine"
       }
     ],
     "length": {

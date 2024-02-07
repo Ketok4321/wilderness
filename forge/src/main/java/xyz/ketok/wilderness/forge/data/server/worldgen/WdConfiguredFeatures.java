@@ -31,7 +31,7 @@ import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import xyz.ketok.wilderness.Wilderness;
 import xyz.ketok.wilderness.feature.FallenTreeFeature;
-import xyz.ketok.wilderness.feature.treedecorators.BlockOnFallenLogDecorator;
+import xyz.ketok.wilderness.feature.treedecorators.BlockOnLogDecorator;
 import xyz.ketok.wilderness.registry.WdBlocks;
 import xyz.ketok.wilderness.registry.WdFeatures;
 
@@ -60,10 +60,10 @@ public class WdConfiguredFeatures {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         var placed = context.lookup(Registries.PLACED_FEATURE);
 
-        context.register(FALLEN_OAK, fallenTree(() -> BlockStateProviders.MOSSY_OAK_LOG, block(Blocks.MOSS_CARPET, 0.4F)));
-        context.register(FALLEN_BIRCH, fallenTree(() -> BlockStateProvider.simple(Blocks.BIRCH_LOG), block(Blocks.MOSS_CARPET, 0.4F)));
-        context.register(FALLEN_SPRUCE, fallenTree(() -> BlockStateProvider.simple(Blocks.SPRUCE_LOG), block(Blocks.MOSS_CARPET, 0.3F)));
-        context.register(FALLEN_JUNGLE_TREE, fallenTree(() -> BlockStateProvider.simple(Blocks.JUNGLE_LOG), TrunkVineDecorator.INSTANCE, block(Blocks.MOSS_CARPET, 0.5F)));
+        context.register(FALLEN_OAK, fallenTree(() -> BlockStateProviders.MOSSY_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
+        context.register(FALLEN_BIRCH, fallenTree(() -> BlockStateProvider.simple(Blocks.BIRCH_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
+        context.register(FALLEN_SPRUCE, fallenTree(() -> BlockStateProvider.simple(Blocks.SPRUCE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
+        context.register(FALLEN_JUNGLE_TREE, fallenTree(() -> BlockStateProvider.simple(Blocks.JUNGLE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.5F), TrunkVineDecorator.INSTANCE));
 
         context.register(MEDIUM_OAK, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProviders.MOSSY_OAK_LOG/*BlockStateProvider.simple(Blocks.OAK_LOG)*/,
@@ -127,8 +127,12 @@ public class WdConfiguredFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(Wilderness.MOD_ID, name));
     }
 
-    private static BlockOnFallenLogDecorator block(Block block, float chance) {
-        return new BlockOnFallenLogDecorator(block, chance);
+    private static BlockOnLogDecorator block(Block block, float chance) {
+        return new BlockOnLogDecorator(block.defaultBlockState(), chance, false);
+    }
+
+    private static BlockOnLogDecorator blockOnTop(Block block, float chance) {
+        return new BlockOnLogDecorator(block.defaultBlockState(), chance, true);
     }
 
     private static ConfiguredFeature<?, ?> fallenTree(Supplier<BlockStateProvider> log, TreeDecorator... decorators) {

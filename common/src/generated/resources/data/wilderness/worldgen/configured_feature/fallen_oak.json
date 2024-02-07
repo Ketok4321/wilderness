@@ -26,11 +26,23 @@
     },
     "decorators": [
       {
-        "type": "wilderness:block_on_fallen_log",
+        "type": "wilderness:block_on_log",
         "block": {
           "Name": "minecraft:moss_carpet"
         },
-        "chance": 0.4
+        "chance": 0.4,
+        "on_top": true
+      },
+      {
+        "type": "wilderness:block_on_log",
+        "block": {
+          "Name": "wilderness:shelf_mushroom",
+          "Properties": {
+            "facing": "north"
+          }
+        },
+        "chance": 0.25,
+        "on_top": false
       }
     ],
     "length": {

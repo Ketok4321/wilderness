@@ -7,7 +7,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import xyz.ketok.wilderness.Wilderness;
 import xyz.ketok.wilderness.feature.FallenTreeFeature;
-import xyz.ketok.wilderness.feature.treedecorators.BlockOnFallenLogDecorator;
+import xyz.ketok.wilderness.feature.treedecorators.BlockOnLogDecorator;
 
 public class WdFeatures {
     public static DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Wilderness.MOD_ID, Registries.FEATURE);
@@ -17,6 +17,6 @@ public class WdFeatures {
     public static class TreeDecorators {
         public static DeferredRegister<TreeDecoratorType<?>> DECORATORS = DeferredRegister.create(Wilderness.MOD_ID, Registries.TREE_DECORATOR_TYPE);
 
-        public static final RegistrySupplier<TreeDecoratorType<BlockOnFallenLogDecorator>> BLOCK_ON_FALLEN_LOG = DECORATORS.register("block_on_fallen_log", () -> new TreeDecoratorType<>(BlockOnFallenLogDecorator.CODEC));
+        public static final RegistrySupplier<TreeDecoratorType<BlockOnLogDecorator>> BLOCK_ON_LOG = DECORATORS.register("block_on_log", () -> new TreeDecoratorType<>(BlockOnLogDecorator.CODEC));
     }
 }
