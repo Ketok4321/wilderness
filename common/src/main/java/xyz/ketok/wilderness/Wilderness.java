@@ -16,6 +16,7 @@ public class Wilderness {
         WdFeatures.TreeDecorators.DECORATORS.register();
 
         LifecycleEvent.SETUP.register(WdBlocks::setup);
+        LifecycleEvent.SETUP.register(WdItems::setup);
         LifecycleEvent.SETUP.register(WdBiomeModifications::setup);
     }
 }
