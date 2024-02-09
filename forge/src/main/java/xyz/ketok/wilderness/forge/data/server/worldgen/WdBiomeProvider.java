@@ -1,32 +1,21 @@
 package xyz.ketok.wilderness.forge.data.server.worldgen;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings.SpawnerData;
-import xyz.ketok.wilderness.Wilderness;
 import net.minecraft.data.worldgen.BootstapContext;
 
+import static xyz.ketok.wilderness.registry.dynamic.WdBiomes.*;
+import static xyz.ketok.wilderness.registry.dynamic.WdPlacedFeatures.*;
 import static net.minecraft.data.worldgen.placement.VegetationPlacements.*;
 import static net.minecraft.data.worldgen.BiomeDefaultFeatures.*;
 import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.*;
 import static net.minecraft.world.entity.EntityType.*;
 import static net.minecraft.world.entity.MobCategory.*;
-import static xyz.ketok.wilderness.forge.data.server.worldgen.WdPlacedFeatures.*;
 
-//TODO: Biome tags
-public class WdBiomes {
-    public static final ResourceKey<Biome> OLD_GROWTH_FOREST = key("old_growth_forest");
-    public static final ResourceKey<Biome> MIXED_FOREST = key("mixed_forest");
-
-    private static ResourceKey<Biome> key(String name) {
-        return ResourceKey.create(Registries.BIOME, new ResourceLocation(Wilderness.MOD_ID, name));
-    }
-
+public class WdBiomeProvider {
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(OLD_GROWTH_FOREST, createOldGrowthForestBiome(context));
         context.register(MIXED_FOREST, createMixedForestBiome(context));
