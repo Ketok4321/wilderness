@@ -46,7 +46,7 @@ public class WdConfiguredFeatureProvider {
         context.register(FALLEN_OAK, fallenTree(() -> BlockStateProviders.MOSSY_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
         context.register(FALLEN_BIRCH, fallenTree(() -> BlockStateProvider.simple(Blocks.BIRCH_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
         context.register(FALLEN_SPRUCE, fallenTree(() -> BlockStateProvider.simple(Blocks.SPRUCE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
-        context.register(FALLEN_JUNGLE_TREE, fallenTree(() -> BlockStateProvider.simple(Blocks.JUNGLE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.5F), TrunkVineDecorator.INSTANCE));
+        context.register(FALLEN_JUNGLE_TREE, fallenTree(() -> BlockStateProvider.simple(Blocks.JUNGLE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), TrunkVineDecorator.INSTANCE));
 
         context.register(MEDIUM_OAK, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProviders.MOSSY_OAK_LOG/*BlockStateProvider.simple(Blocks.OAK_LOG)*/,

@@ -16,7 +16,7 @@
         "block": {
           "Name": "minecraft:moss_carpet"
         },
-        "chance": 0.5,
+        "chance": 0.3,
         "on_top": true
       },
       {
