@@ -1,3 +1,6 @@
 {
-  "parent": "wilderness:block/shelf_mushroom"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "wilderness:item/shelf_mushroom"
+  }
 }
