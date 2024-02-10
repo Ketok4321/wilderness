@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "xyz.ketok.wilderness.fabric.WildernessFabric"
+    ],
+    "terrablender": [
+      "xyz.ketok.wilderness.fabric.WildernessFabric"
     ]
   },
   "mixins": [
