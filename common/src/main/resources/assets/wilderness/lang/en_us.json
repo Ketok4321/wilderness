@@ -1,3 +1,8 @@
 {
+  "biome.wilderness.old_growth_forest": "Old Growth Forest",
+  "biome.wilderness.mixed_forest": "Mixed Forest",
 
+  "block.wilderness.mossy_oak_log": "Mossy Oak Log",
+  "block.wilderness.mossy_oak_wood": "Mossy Oak Wood",
+  "block.wilderness.shelf_mushroom": "Shelf Mushroom"
 }
