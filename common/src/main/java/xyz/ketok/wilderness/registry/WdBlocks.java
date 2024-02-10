@@ -31,6 +31,7 @@ public class WdBlocks {
         }
 
         AxeItem.STRIPPABLES.put(MOSSY_OAK_LOG.get(), Blocks.OAK_LOG);
+        AxeItem.STRIPPABLES.put(MOSSY_OAK_WOOD.get(), Blocks.OAK_WOOD);
 
         FireBlock fire = (FireBlock) Blocks.FIRE;
         fire.setFlammable(MOSSY_OAK_LOG.get(), 5, 5);
