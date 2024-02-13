@@ -10,7 +10,6 @@ public class WdPlacedFeatures {
     public static final ResourceKey<PlacedFeature> FALLEN_OAK = key("fallen_oak");
     public static final ResourceKey<PlacedFeature> FALLEN_BIRCH = key("fallen_birch");
     public static final ResourceKey<PlacedFeature> FALLEN_SPRUCE = key("fallen_spruce");
-    public static final ResourceKey<PlacedFeature> FALLEN_JUNGLE_TREE = key("fallen_jungle_tree");
 
     public static final ResourceKey<PlacedFeature> MEDIUM_OAK = key("medium_oak");
     public static final ResourceKey<PlacedFeature> MOSSY_FANCY_OAK = key("mossy_fancy_oak");

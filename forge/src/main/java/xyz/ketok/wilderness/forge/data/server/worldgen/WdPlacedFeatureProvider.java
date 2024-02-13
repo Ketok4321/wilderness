@@ -23,7 +23,6 @@ public class WdPlacedFeatureProvider {
         context.register(FALLEN_OAK, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_OAK), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
         context.register(FALLEN_BIRCH, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_BIRCH), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
         context.register(FALLEN_SPRUCE, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_SPRUCE), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
-        context.register(FALLEN_JUNGLE_TREE, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_JUNGLE_TREE), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 
         context.register(MEDIUM_OAK, checkedTree(configured.getOrThrow(WdConfiguredFeatures.MEDIUM_OAK)));
         context.register(MOSSY_FANCY_OAK, checkedTree(configured.getOrThrow(WdConfiguredFeatures.MOSSY_FANCY_OAK)));

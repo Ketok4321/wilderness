@@ -11,7 +11,6 @@ public class WdTags {
         public static final TagKey<Biome> HAS_FALLEN_OAK = tag("has_fallen_tree/oak");
         public static final TagKey<Biome> HAS_FALLEN_BIRCH = tag("has_fallen_tree/birch.json");
         public static final TagKey<Biome> HAS_FALLEN_SPRUCE = tag("has_fallen_tree/spruce");
-        public static final TagKey<Biome> HAS_FALLEN_JUNGLE_TREE = tag("has_fallen_tree/jungle");
 
         private static TagKey<Biome> tag(String name)
         {
