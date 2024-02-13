@@ -1,0 +1,27 @@
+{
+  "item.axe.unmoss": {
+    "sounds": [
+      {
+        "name": "block/moss/break1",
+        "volume": 0.75
+      },
+      {
+        "name": "block/moss/break2",
+        "volume": 0.75
+      },
+      {
+        "name": "block/moss/break3",
+        "volume": 0.75
+      },
+      {
+        "name": "block/moss/break4",
+        "volume": 0.75
+      },
+      {
+        "name": "block/moss/break5",
+        "volume": 0.75
+      }
+    ],
+    "subtitle": "subtitles.wilderness.item.axe.unmoss"
+  }
+}

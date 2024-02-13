@@ -9,5 +9,7 @@
   "block.wilderness.overgrown_spruce_log": "Overgrown Spruce Log",
   "block.wilderness.overgrown_spruce_wood": "Overgrown Spruce Wood",
 
-  "block.wilderness.shelf_mushroom": "Shelf Mushroom"
+  "block.wilderness.shelf_mushroom": "Shelf Mushroom",
+
+  "subtitles.wilderness.item.axe.unmoss": "Axe removes moss"
 }

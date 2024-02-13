@@ -8,6 +8,7 @@ import xyz.ketok.wilderness.region.WildernessRegion;
 import xyz.ketok.wilderness.registry.WdBlocks;
 import xyz.ketok.wilderness.registry.WdFeatures;
 import xyz.ketok.wilderness.registry.WdItems;
+import xyz.ketok.wilderness.registry.WdSoundEvents;
 
 public class Wilderness {
     public static final String MOD_ID = "wilderness";
@@ -17,6 +18,7 @@ public class Wilderness {
         WdItems.ITEMS.register();
         WdFeatures.FEATURES.register();
         WdFeatures.TreeDecorators.DECORATORS.register();
+        WdSoundEvents.SOUNDS.register();
 
         LifecycleEvent.SETUP.register(WdBlocks::setup);
         LifecycleEvent.SETUP.register(WdItems::setup);
