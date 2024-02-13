@@ -21,5 +21,7 @@ public class WdItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
+        copy(BlockTags.BIRCH_LOGS, ItemTags.BIRCH_LOGS);
+        copy(BlockTags.SPRUCE_LOGS, ItemTags.SPRUCE_LOGS);
     }
 }

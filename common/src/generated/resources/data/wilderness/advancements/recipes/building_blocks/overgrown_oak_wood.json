@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "wilderness:mossy_oak_log"
+              "wilderness:overgrown_oak_log"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wilderness:mossy_oak_wood"
+        "recipe": "wilderness:overgrown_oak_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "wilderness:mossy_oak_wood"
+      "wilderness:overgrown_oak_wood"
     ]
   },
   "sends_telemetry_event": false

@@ -43,20 +43,20 @@ public class WdConfiguredFeatureProvider {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         var placed = context.lookup(Registries.PLACED_FEATURE);
 
-        context.register(FALLEN_OAK, fallenTree(() -> BlockStateProviders.MOSSY_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
-        context.register(FALLEN_BIRCH, fallenTree(() -> BlockStateProvider.simple(Blocks.BIRCH_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
-        context.register(FALLEN_SPRUCE, fallenTree(() -> BlockStateProvider.simple(Blocks.SPRUCE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
-        context.register(FALLEN_JUNGLE_TREE, fallenTree(() -> BlockStateProvider.simple(Blocks.JUNGLE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), TrunkVineDecorator.INSTANCE));
+        context.register(FALLEN_OAK, fallenTree(BlockStateProviders.OVERGROWN_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
+        context.register(FALLEN_BIRCH, fallenTree(BlockStateProviders.OVERGROWN_BIRCH_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
+        context.register(FALLEN_SPRUCE, fallenTree(BlockStateProviders.OVERGROWN_SPRUCE_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
+        context.register(FALLEN_JUNGLE_TREE, fallenTree(BlockStateProvider.simple(Blocks.JUNGLE_LOG), blockOnTop(Blocks.MOSS_CARPET, 0.3F), TrunkVineDecorator.INSTANCE));
 
         context.register(MEDIUM_OAK, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProviders.MOSSY_OAK_LOG/*BlockStateProvider.simple(Blocks.OAK_LOG)*/,
+                BlockStateProviders.OVERGROWN_OAK_LOG/*BlockStateProvider.simple(Blocks.OAK_LOG)*/,
                 new FancyTrunkPlacer(6, 2, 0),
                 BlockStateProvider.simple(Blocks.OAK_LEAVES),
                 new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
         ).ignoreVines().build()));
 
-        context.register(MOSSY_FANCY_OAK, new ConfiguredFeature<>(Feature.TREE, createFancyOak(BlockStateProviders.MOSSY_OAK_LOG)
+        context.register(MOSSY_FANCY_OAK, new ConfiguredFeature<>(Feature.TREE, createFancyOak(BlockStateProviders.OVERGROWN_OAK_LOG)
                 .decorators(List.of(new BeehiveDecorator(0.02F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.02F)))
                 .build()
         ));
@@ -114,9 +114,9 @@ public class WdConfiguredFeatureProvider {
         return new BlockOnLogDecorator(block.defaultBlockState(), chance, true);
     }
 
-    private static ConfiguredFeature<?, ?> fallenTree(Supplier<BlockStateProvider> log, TreeDecorator... decorators) {
+    private static ConfiguredFeature<?, ?> fallenTree(BlockStateProvider log, TreeDecorator... decorators) {
         return new ConfiguredFeature<>(WdFeatures.FALLEN_TREE.get(), new FallenTreeFeature.Config(
-                log.get(),
+                log,
                 UniformInt.of(5, 6),
                 List.of(decorators)
         ));
@@ -138,6 +138,8 @@ public class WdConfiguredFeatureProvider {
     }
 
     public static class BlockStateProviders {
-        public static BlockStateProvider MOSSY_OAK_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.MOSSY_OAK_LOG.get().defaultBlockState(), 2).add(Blocks.OAK_LOG.defaultBlockState(), 1));
+        public static BlockStateProvider OVERGROWN_OAK_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.OVERGROWN_OAK_LOG.get().defaultBlockState(), 2).add(Blocks.OAK_LOG.defaultBlockState(), 1));
+        public static BlockStateProvider OVERGROWN_BIRCH_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.OVERGROWN_BIRCH_LOG.get().defaultBlockState(), 2).add(Blocks.BIRCH_LOG.defaultBlockState(), 1));
+        public static BlockStateProvider OVERGROWN_SPRUCE_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.OVERGROWN_SPRUCE_LOG.get().defaultBlockState(), 2).add(Blocks.SPRUCE_LOG.defaultBlockState(), 1));
     }
 }

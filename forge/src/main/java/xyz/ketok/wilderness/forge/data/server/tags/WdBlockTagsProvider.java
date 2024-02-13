@@ -17,6 +17,8 @@ public class WdBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(BlockTags.OAK_LOGS).add(WdBlocks.MOSSY_OAK_LOG.get(), WdBlocks.MOSSY_OAK_WOOD.get());
+        tag(BlockTags.OAK_LOGS).add(WdBlocks.OVERGROWN_OAK_LOG.get(), WdBlocks.OVERGROWN_OAK_WOOD.get());
+        tag(BlockTags.BIRCH_LOGS).add(WdBlocks.OVERGROWN_BIRCH_LOG.get(), WdBlocks.OVERGROWN_BIRCH_WOOD.get());
+        tag(BlockTags.SPRUCE_LOGS).add(WdBlocks.OVERGROWN_SPRUCE_LOG.get(), WdBlocks.OVERGROWN_SPRUCE_WOOD.get());
     }
 }

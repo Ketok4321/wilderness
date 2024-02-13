@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "overgrown_log",
+  "ingredients": [
+    {
+      "item": "minecraft:birch_log"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "wilderness:overgrown_birch_log"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "building",
+  "group": "overgrown_log",
   "ingredients": [
     {
       "item": "minecraft:oak_log"
@@ -10,6 +11,6 @@
     }
   ],
   "result": {
-    "item": "wilderness:mossy_oak_log"
+    "item": "wilderness:overgrown_oak_log"
   }
 }

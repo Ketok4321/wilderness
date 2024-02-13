@@ -4,7 +4,7 @@
   "group": "bark",
   "key": {
     "#": {
-      "item": "wilderness:mossy_oak_log"
+      "item": "wilderness:overgrown_birch_log"
     }
   },
   "pattern": [
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 3,
-    "item": "wilderness:mossy_oak_wood"
+    "item": "wilderness:overgrown_birch_wood"
   },
   "show_notification": true
 }

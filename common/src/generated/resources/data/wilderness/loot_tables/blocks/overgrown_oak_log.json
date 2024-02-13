@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "wilderness:mossy_oak_log"
+          "name": "wilderness:overgrown_oak_log"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "wilderness:blocks/mossy_oak_log"
+  "random_sequence": "wilderness:blocks/overgrown_oak_log"
 }

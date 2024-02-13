@@ -1,2 +1,4 @@
-// 1.20.1	2024-02-04T19:04:00.011044578	Tags for minecraft:item mod id wilderness
-75980c628622c35941440120ebcc1efb0341273f data/minecraft/tags/items/oak_logs.json
+// 1.20.1	2024-02-13T19:15:52.753843418	Tags for minecraft:item mod id wilderness
+5247d59c41c7260967d456b844628acc7b99e4b2 data/minecraft/tags/items/birch_logs.json
+d03b69f44055614f128e046c3506f669eb5746ee data/minecraft/tags/items/oak_logs.json
+c24bba431669e5412e51e5f18abb675fcc169e4a data/minecraft/tags/items/spruce_logs.json

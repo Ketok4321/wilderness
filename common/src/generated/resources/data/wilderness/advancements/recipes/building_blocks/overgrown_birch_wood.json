@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_moss": {
+    "has_log": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:moss_block"
+              "wilderness:overgrown_birch_log"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wilderness:mossy_oak_log"
+        "recipe": "wilderness:overgrown_birch_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_moss",
+      "has_log",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "wilderness:mossy_oak_log"
+      "wilderness:overgrown_birch_wood"
     ]
   },
   "sends_telemetry_event": false

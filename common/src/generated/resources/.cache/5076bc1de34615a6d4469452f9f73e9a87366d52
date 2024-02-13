@@ -1,4 +1,8 @@
-// 1.20.1	2024-02-10T19:12:29.17373578	Item Models: wilderness
-caefa9d98843bf571a847f2a30f67012821f9763 assets/wilderness/models/item/mossy_oak_log.json
-d225e8bfc30a774b2280a9c831cc415f2de3661e assets/wilderness/models/item/mossy_oak_wood.json
+// 1.20.1	2024-02-13T19:15:52.754431345	Item Models: wilderness
+29af1a2971e0a7e5e9e875781bb43fb791ee998f assets/wilderness/models/item/overgrown_birch_log.json
+296ca378257d0b958faffe3d70240e1e1849b1f8 assets/wilderness/models/item/overgrown_birch_wood.json
+11fd4eb6a7f97429b40090701c81ae97cc2897f0 assets/wilderness/models/item/overgrown_oak_log.json
+99c0a6d25ef3a4fc33aa4f93136ef9fae8a0098a assets/wilderness/models/item/overgrown_oak_wood.json
+e1052c205467e19312fdcd4974b7d499f818d6b6 assets/wilderness/models/item/overgrown_spruce_log.json
+25239099a80d7cd0e8c6bfcfeabdd17deb39d98a assets/wilderness/models/item/overgrown_spruce_wood.json
 72035543404b675fd61e9e48eb558845ce262553 assets/wilderness/models/item/shelf_mushroom.json

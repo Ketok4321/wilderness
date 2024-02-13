@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "wilderness:block/overgrown_spruce_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "wilderness:block/overgrown_spruce_wood"
+    },
+    "axis=z": {
+      "model": "wilderness:block/overgrown_spruce_wood_horizontal",
+      "x": 90
+    }
+  }
+}

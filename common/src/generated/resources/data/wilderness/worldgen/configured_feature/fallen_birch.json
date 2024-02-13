@@ -2,13 +2,27 @@
   "type": "wilderness:fallen_tree",
   "config": {
     "block": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:birch_log",
-        "Properties": {
-          "axis": "y"
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "wilderness:overgrown_birch_log",
+            "Properties": {
+              "axis": "y"
+            }
+          },
+          "weight": 2
+        },
+        {
+          "data": {
+            "Name": "minecraft:birch_log",
+            "Properties": {
+              "axis": "y"
+            }
+          },
+          "weight": 1
         }
-      }
+      ]
     },
     "decorators": [
       {
