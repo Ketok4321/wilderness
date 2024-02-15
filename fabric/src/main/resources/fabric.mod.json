@@ -3,15 +3,15 @@
   "id": "wilderness",
   "version": "${version}",
   "name": "Wilderness",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A mod that enhances minecraft's forests by adding new, wilder variants of them",
   "authors": [
     "Ketok"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Ketok4321/wilderness/",
+    "issues": "https://github.com/Ketok4321/wilderness/issues"
   },
-  "license": "Insert License Here",
+  "license": "GNU LGPL v3",
   "icon": "assets/wilderness/icon.png",
   "environment": "*",
   "entrypoints": {
