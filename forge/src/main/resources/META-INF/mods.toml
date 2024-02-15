@@ -33,3 +33,10 @@ mandatory = true
 versionRange = "[9.1.12,)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.wilderness]]
+modId = "terrablender"
+mandatory = true
+versionRange = "[3,)"
+ordering = "AFTER"
+side = "BOTH"
