@@ -1,4 +1,4 @@
-package xyz.ketok.wilderness.forge.data.server.worldgen;
+package xyz.ketok.wilderness.forge.data.server.registry;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;

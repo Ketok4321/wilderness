@@ -11,8 +11,8 @@ import xyz.ketok.wilderness.registry.WdBlocks;
 import static xyz.ketok.wilderness.forge.data.WdDataGenUtil.*;
 
 public class WdBlockStateProvider extends BlockStateProvider {
-    public WdBlockStateProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
-        super(packOutput, Wilderness.MOD_ID, existingFileHelper);
+    public WdBlockStateProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, Wilderness.MOD_ID, existingFileHelper);
     }
 
     @Override

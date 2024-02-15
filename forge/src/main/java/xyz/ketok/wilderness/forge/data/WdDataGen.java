@@ -10,33 +10,32 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import xyz.ketok.wilderness.Wilderness;
-import xyz.ketok.wilderness.forge.data.server.worldgen.WdRegistryProvider;
+import xyz.ketok.wilderness.forge.data.server.registry.WdRegistryProvider;
 
 @Mod.EventBusSubscriber(modid = Wilderness.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class WdDataGen {
     @SubscribeEvent
     public static void onDataSetup(GatherDataEvent event) {
         var generator = event.getGenerator();
-        var packOutput = generator.getPackOutput();
+        var output = generator.getPackOutput();
         var existingFileHelper = event.getExistingFileHelper();
         var lookupProvider = event.getLookupProvider();
 
         // Server
         {
-            generator.addProvider(event.includeServer(), new WdRecipeProvider(packOutput));
-            generator.addProvider(event.includeServer(), new WdLootTableProvider(packOutput));
+            generator.addProvider(event.includeServer(), new WdRecipeProvider(output));
+            generator.addProvider(event.includeServer(), new WdLootTableProvider(output));
 
-            WdBlockTagsProvider blockTags = new WdBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
-            generator.addProvider(event.includeServer(), blockTags);
-            generator.addProvider(event.includeServer(), new WdItemTagsProvider(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+            var blockTags = generator.addProvider(event.includeServer(), new WdBlockTagsProvider(output, lookupProvider, existingFileHelper));
+            generator.addProvider(event.includeServer(), new WdItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 
-            generator.addProvider(event.includeServer(), new WdRegistryProvider(packOutput, lookupProvider));
+            generator.addProvider(event.includeServer(), new WdRegistryProvider(output, lookupProvider));
         }
 
         // Client
         {
-            generator.addProvider(event.includeClient(), new WdBlockStateProvider(packOutput, existingFileHelper));
-            generator.addProvider(event.includeClient(), new WdItemModelProvider(packOutput, existingFileHelper));
+            generator.addProvider(event.includeClient(), new WdBlockStateProvider(output, existingFileHelper));
+            generator.addProvider(event.includeClient(), new WdItemModelProvider(output, existingFileHelper));
         }
     }
 }

@@ -1,4 +1,4 @@
-package xyz.ketok.wilderness.forge.data.server.worldgen;
+package xyz.ketok.wilderness.forge.data.server.registry;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -23,7 +23,6 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
-import net.minecraft.world.level.levelgen.feature.treedecorators.TrunkVineDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
@@ -35,7 +34,6 @@ import xyz.ketok.wilderness.registry.dynamic.WdPlacedFeatures;
 
 import java.util.List;
 import java.util.OptionalInt;
-import java.util.function.Supplier;
 
 import static xyz.ketok.wilderness.registry.dynamic.WdConfiguredFeatures.*;
 

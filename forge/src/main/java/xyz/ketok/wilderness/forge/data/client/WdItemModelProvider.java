@@ -13,8 +13,8 @@ import xyz.ketok.wilderness.registry.dynamic.WdBiomes;
 import static xyz.ketok.wilderness.forge.data.WdDataGenUtil.*;
 
 public class WdItemModelProvider extends ItemModelProvider {
-    public WdItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
-        super(packOutput, Wilderness.MOD_ID, existingFileHelper);
+    public WdItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, Wilderness.MOD_ID, existingFileHelper);
     }
 
     @Override

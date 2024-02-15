@@ -12,8 +12,8 @@ import xyz.ketok.wilderness.registry.WdBlocks;
 import java.util.concurrent.CompletableFuture;
 
 public class WdBlockTagsProvider extends BlockTagsProvider {
-    public WdBlockTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
-        super(packOutput, lookupProvider, Wilderness.MOD_ID, existingFileHelper);
+    public WdBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, Wilderness.MOD_ID, existingFileHelper);
     }
 
     @Override

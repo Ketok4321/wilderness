@@ -15,8 +15,8 @@ import java.util.function.Consumer;
 import static net.minecraft.data.recipes.ShapelessRecipeBuilder.shapeless;
 
 public class WdRecipeProvider extends RecipeProvider {
-    public WdRecipeProvider(PackOutput packOutput) {
-        super(packOutput);
+    public WdRecipeProvider(PackOutput output) {
+        super(output);
     }
 
     @Override

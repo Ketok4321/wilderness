@@ -23,8 +23,8 @@ import java.util.Set;
 import static xyz.ketok.wilderness.forge.data.WdDataGenUtil.*;
 
 public class WdLootTableProvider extends LootTableProvider {
-    public WdLootTableProvider(PackOutput packOutput) {
-        super(packOutput, Set.of(), List.of(new SubProviderEntry(WdBlockLootSubProvider::new, LootContextParamSets.BLOCK)));
+    public WdLootTableProvider(PackOutput output) {
+        super(output, Set.of(), List.of(new SubProviderEntry(WdBlockLootSubProvider::new, LootContextParamSets.BLOCK)));
     }
 
     @Override

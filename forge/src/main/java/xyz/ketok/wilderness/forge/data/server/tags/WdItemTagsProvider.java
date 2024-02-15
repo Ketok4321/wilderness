@@ -14,8 +14,8 @@ import xyz.ketok.wilderness.Wilderness;
 import java.util.concurrent.CompletableFuture;
 
 public class WdItemTagsProvider extends ItemTagsProvider {
-    public WdItemTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
-        super(packOutput, lookupProvider, blockTags, Wilderness.MOD_ID, existingFileHelper);
+    public WdItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagsProvider.TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, lookupProvider, blockTags, Wilderness.MOD_ID, existingFileHelper);
     }
 
     @Override
