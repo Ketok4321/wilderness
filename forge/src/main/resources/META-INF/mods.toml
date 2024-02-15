@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "https://github.com/Ketok4321/wilderness/issues"
+license = "GNU LGPL v3"
 
 [[mods]]
 modId = "wilderness"
@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "Wilderness"
 authors = "Ketok"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+A mod that enhances minecraft's forests by adding new, wilder variants of them
 '''
 #logoFile = ""
 
