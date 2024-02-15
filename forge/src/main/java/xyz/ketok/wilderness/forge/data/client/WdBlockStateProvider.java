@@ -19,9 +19,9 @@ public class WdBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         logBlock(WdBlocks.OVERGROWN_OAK_LOG.get());
         woodBlock(WdBlocks.OVERGROWN_OAK_WOOD.get(), WdBlocks.OVERGROWN_OAK_LOG.get());
-        axisBlock(WdBlocks.OVERGROWN_BIRCH_LOG.get(), blockTexture(WdBlocks.OVERGROWN_BIRCH_LOG.get()), suffix(blockTexture(Blocks.BIRCH_LOG), "_top"));
+        logBlock(WdBlocks.OVERGROWN_BIRCH_LOG.get());
         woodBlock(WdBlocks.OVERGROWN_BIRCH_WOOD.get(), WdBlocks.OVERGROWN_BIRCH_LOG.get());
-        axisBlock(WdBlocks.OVERGROWN_SPRUCE_LOG.get(), blockTexture(WdBlocks.OVERGROWN_SPRUCE_LOG.get()), suffix(blockTexture(Blocks.SPRUCE_LOG), "_top"));
+        logBlock(WdBlocks.OVERGROWN_SPRUCE_LOG.get());
         woodBlock(WdBlocks.OVERGROWN_SPRUCE_WOOD.get(), WdBlocks.OVERGROWN_SPRUCE_LOG.get());
     }
 
