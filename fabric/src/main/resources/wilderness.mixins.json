@@ -1,11 +1,12 @@
 {
   "required": true,
-  "package": "xyz.ketok.wilderness.mixin.fabric",
+  "package": "xyz.ketok.wilderness.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
   ],
   "mixins": [
+    "MixinBonemealItem"
   ],
   "injectors": {
     "defaultRequire": 1

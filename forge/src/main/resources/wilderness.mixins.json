@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "xyz.ketok.wilderness.mixin.forge",
+  "package": "xyz.ketok.wilderness.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
