@@ -19,11 +19,13 @@ import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import xyz.ketok.wilderness.feature.FallenTreeFeature;
@@ -38,35 +40,45 @@ import java.util.OptionalInt;
 import static xyz.ketok.wilderness.registry.dynamic.WdConfiguredFeatures.*;
 
 public class WdConfiguredFeatureProvider {
+    private static final TreeDecorator SHELF_MUSHROOM = block(WdBlocks.SHELF_MUSHROOM.get(), 0.02F);
+
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         var placed = context.lookup(Registries.PLACED_FEATURE);
 
-        context.register(FALLEN_OAK, fallenTree(BlockStateProviders.OVERGROWN_OAK_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
-        context.register(FALLEN_BIRCH, fallenTree(BlockStateProviders.OVERGROWN_BIRCH_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
-        context.register(FALLEN_SPRUCE, fallenTree(BlockStateProviders.OVERGROWN_SPRUCE_LOG, blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
+        context.register(FALLEN_OAK, fallenTree(provider(WdBlocks.OVERGROWN_OAK_LOG.get(), 2, Blocks.OAK_LOG, 1), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
+        context.register(FALLEN_BIRCH, fallenTree(provider(WdBlocks.OVERGROWN_BIRCH_LOG.get(), 2, Blocks.BIRCH_LOG, 1), blockOnTop(Blocks.MOSS_CARPET, 0.4F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.2F)));
+        context.register(FALLEN_SPRUCE, fallenTree(provider(WdBlocks.OVERGROWN_SPRUCE_LOG.get(), 2, Blocks.SPRUCE_LOG, 1), blockOnTop(Blocks.MOSS_CARPET, 0.3F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.25F)));
 
         context.register(MEDIUM_OAK, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProviders.OVERGROWN_OAK_LOG/*BlockStateProvider.simple(Blocks.OAK_LOG)*/,
+                provider(WdBlocks.OVERGROWN_OAK_LOG.get(), 1, Blocks.OAK_LOG, 1),
                 new FancyTrunkPlacer(6, 2, 0),
                 BlockStateProvider.simple(Blocks.OAK_LEAVES),
                 new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
-        ).ignoreVines().build()));
+        ).decorators(List.of(SHELF_MUSHROOM)).ignoreVines().build()));
 
-        context.register(MOSSY_FANCY_OAK, new ConfiguredFeature<>(Feature.TREE, createFancyOak(BlockStateProviders.OVERGROWN_OAK_LOG)
-                .decorators(List.of(new BeehiveDecorator(0.02F), block(WdBlocks.SHELF_MUSHROOM.get(), 0.02F)))
+        context.register(OVERGROWN_FANCY_OAK, new ConfiguredFeature<>(Feature.TREE, createFancyOak(provider(WdBlocks.OVERGROWN_OAK_LOG.get(), 2, Blocks.OAK_LOG, 1))
+                .decorators(List.of(new BeehiveDecorator(0.02F), SHELF_MUSHROOM))
                 .build()
         ));
+
+        context.register(OVERGROWN_SPRUCE, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                provider(WdBlocks.OVERGROWN_SPRUCE_LOG.get(), 1, Blocks.SPRUCE_LOG, 2),
+                new StraightTrunkPlacer(5, 2, 1),
+                BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
+                new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(1, 2)),
+                new TwoLayersFeatureSize(2, 0, 2)
+        ).decorators(List.of(SHELF_MUSHROOM)).ignoreVines().build()));
 
         context.register(TREES_OLD_GROWTH_FOREST, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(
                 List.of(
                         new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.OAK_BEES_002), 0.1F),
                         new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.BIRCH_BEES_002), 0.1F)
-                ), placed.getOrThrow(WdPlacedFeatures.MOSSY_FANCY_OAK)
+                ), placed.getOrThrow(WdPlacedFeatures.OVERGROWN_FANCY_OAK)
         )));
 
         context.register(TREES_MIXED_FOREST, new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(
-                List.of(new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.SPRUCE_CHECKED), 0.5F),
+                List.of(new WeightedPlacedFeature(placed.getOrThrow(WdPlacedFeatures.OVERGROWN_SPRUCE), 0.5F),
                         new WeightedPlacedFeature(placed.getOrThrow(TreePlacements.OAK_BEES_002), 0.1F)),
                 placed.getOrThrow(WdPlacedFeatures.MEDIUM_OAK)
         )));
@@ -103,6 +115,10 @@ public class WdConfiguredFeatureProvider {
         ));
     }
 
+    private static BlockStateProvider provider(Block a, int ac, Block b, int bc) {
+        return new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(a.defaultBlockState(), ac).add(b.defaultBlockState(), bc));
+    }
+
     private static BlockOnLogDecorator block(Block block, float chance) {
         return new BlockOnLogDecorator(block.defaultBlockState(), chance, false);
     }
@@ -132,11 +148,5 @@ public class WdConfiguredFeatureProvider {
 
     private static TreeConfiguration.TreeConfigurationBuilder createFancyOak(BlockStateProvider trunkProvider) {
         return (new TreeConfiguration.TreeConfigurationBuilder(trunkProvider, new FancyTrunkPlacer(3, 11, 0), BlockStateProvider.simple(Blocks.OAK_LEAVES), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
-    }
-
-    public static class BlockStateProviders {
-        public static BlockStateProvider OVERGROWN_OAK_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.OVERGROWN_OAK_LOG.get().defaultBlockState(), 2).add(Blocks.OAK_LOG.defaultBlockState(), 1));
-        public static BlockStateProvider OVERGROWN_BIRCH_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.OVERGROWN_BIRCH_LOG.get().defaultBlockState(), 2).add(Blocks.BIRCH_LOG.defaultBlockState(), 1));
-        public static BlockStateProvider OVERGROWN_SPRUCE_LOG = new WeightedStateProvider(new SimpleWeightedRandomList.Builder<BlockState>().add(WdBlocks.OVERGROWN_SPRUCE_LOG.get().defaultBlockState(), 2).add(Blocks.SPRUCE_LOG.defaultBlockState(), 1));
     }
 }

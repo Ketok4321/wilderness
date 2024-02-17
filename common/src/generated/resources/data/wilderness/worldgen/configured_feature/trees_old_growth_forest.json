@@ -1,7 +1,7 @@
 {
   "type": "minecraft:random_selector",
   "config": {
-    "default": "wilderness:mossy_fancy_oak",
+    "default": "wilderness:overgrown_fancy_oak",
     "features": [
       {
         "chance": 0.1,

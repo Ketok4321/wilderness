@@ -12,7 +12,8 @@ public class WdPlacedFeatures {
     public static final ResourceKey<PlacedFeature> FALLEN_SPRUCE = key("fallen_spruce");
 
     public static final ResourceKey<PlacedFeature> MEDIUM_OAK = key("medium_oak");
-    public static final ResourceKey<PlacedFeature> MOSSY_FANCY_OAK = key("mossy_fancy_oak");
+    public static final ResourceKey<PlacedFeature> OVERGROWN_FANCY_OAK = key("overgrown_fancy_oak");
+    public static final ResourceKey<PlacedFeature> OVERGROWN_SPRUCE = key("overgrown_spruce");
 
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_FOREST = key("trees_old_growth_forest");
     public static final ResourceKey<PlacedFeature> TREES_MIXED_FOREST = key("trees_mixed_forest");

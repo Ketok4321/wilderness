@@ -12,7 +12,8 @@ public class WdConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> FALLEN_SPRUCE = key("fallen_spruce");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEDIUM_OAK = key("medium_oak");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> MOSSY_FANCY_OAK = key("mossy_fancy_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERGROWN_FANCY_OAK = key("mossy_fancy_oak");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERGROWN_SPRUCE = key("overgrown_spruce");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_OLD_GROWTH_FOREST = key("trees_old_growth_forest");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TREES_MIXED_FOREST = key("trees_mixed_forest");

@@ -5,7 +5,7 @@
     "features": [
       {
         "chance": 0.5,
-        "feature": "minecraft:spruce_checked"
+        "feature": "wilderness:overgrown_spruce"
       },
       {
         "chance": 0.1,
