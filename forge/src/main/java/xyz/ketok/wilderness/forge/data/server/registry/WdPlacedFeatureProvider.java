@@ -20,9 +20,9 @@ public class WdPlacedFeatureProvider {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         var configured = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        context.register(FALLEN_OAK, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_OAK), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
-        context.register(FALLEN_BIRCH, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_BIRCH), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
-        context.register(FALLEN_SPRUCE, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_SPRUCE), RarityFilter.onAverageOnceEvery(10), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        context.register(FALLEN_OAK, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_OAK), RarityFilter.onAverageOnceEvery(20), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        context.register(FALLEN_BIRCH, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_BIRCH), RarityFilter.onAverageOnceEvery(20), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
+        context.register(FALLEN_SPRUCE, surfaceFeatureT(configured.getOrThrow(WdConfiguredFeatures.FALLEN_SPRUCE), RarityFilter.onAverageOnceEvery(20), PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING)));
 
         context.register(MEDIUM_OAK, checkedTree(configured.getOrThrow(WdConfiguredFeatures.MEDIUM_OAK)));
         context.register(OVERGROWN_FANCY_OAK, checkedTree(configured.getOrThrow(WdConfiguredFeatures.OVERGROWN_FANCY_OAK)));
