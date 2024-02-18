@@ -1,11 +1,14 @@
 package xyz.ketok.wilderness.registry;
 
-import com.google.common.collect.ImmutableMap;
+import dev.architectury.hooks.item.tool.AxeItemHooks;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.MapColor;
@@ -13,7 +16,6 @@ import net.minecraft.world.level.material.PushReaction;
 import xyz.ketok.wilderness.Wilderness;
 import xyz.ketok.wilderness.block.ShelfMushroomBlock;
 
-import java.util.HashMap;
 import java.util.function.Supplier;
 
 public class WdBlocks {
@@ -32,16 +34,12 @@ public class WdBlocks {
     public static final RegistrySupplier<ShelfMushroomBlock> SHELF_MUSHROOM = blockItem("shelf_mushroom", () -> new ShelfMushroomBlock(Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY)), CreativeModeTabs.NATURAL_BLOCKS);
 
     public static void setup() {
-        if (AxeItem.STRIPPABLES instanceof ImmutableMap<Block, Block>) {
-            AxeItem.STRIPPABLES = new HashMap<>(AxeItem.STRIPPABLES);
-        }
-
-        AxeItem.STRIPPABLES.put(OVERGROWN_OAK_LOG.get(), Blocks.OAK_LOG);
-        AxeItem.STRIPPABLES.put(OVERGROWN_OAK_WOOD.get(), Blocks.OAK_WOOD);
-        AxeItem.STRIPPABLES.put(OVERGROWN_BIRCH_LOG.get(), Blocks.BIRCH_LOG);
-        AxeItem.STRIPPABLES.put(OVERGROWN_BIRCH_WOOD.get(), Blocks.BIRCH_WOOD);
-        AxeItem.STRIPPABLES.put(OVERGROWN_SPRUCE_LOG.get(), Blocks.SPRUCE_LOG);
-        AxeItem.STRIPPABLES.put(OVERGROWN_SPRUCE_WOOD.get(), Blocks.SPRUCE_WOOD);
+        AxeItemHooks.addStrippable(OVERGROWN_OAK_LOG.get(), Blocks.OAK_LOG);
+        AxeItemHooks.addStrippable(OVERGROWN_OAK_WOOD.get(), Blocks.OAK_WOOD);
+        AxeItemHooks.addStrippable(OVERGROWN_BIRCH_LOG.get(), Blocks.BIRCH_LOG);
+        AxeItemHooks.addStrippable(OVERGROWN_BIRCH_WOOD.get(), Blocks.BIRCH_WOOD);
+        AxeItemHooks.addStrippable(OVERGROWN_SPRUCE_LOG.get(), Blocks.SPRUCE_LOG);
+        AxeItemHooks.addStrippable(OVERGROWN_SPRUCE_WOOD.get(), Blocks.SPRUCE_WOOD);
 
         FireBlock fire = (FireBlock) Blocks.FIRE;
         for (RegistrySupplier<Block> b : BLOCKS) {
