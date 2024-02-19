@@ -1,8 +1,8 @@
-// 1.20.1	2024-02-13T19:15:52.749993787	Loot Tables
+// 1.20.1	2024-02-19T23:18:10.381230344	Loot Tables
 38dda0a9b8ee16c3a518992f03877a4fff7eab72 data/wilderness/loot_tables/blocks/overgrown_birch_log.json
 0e4501652e39cc980b37b63948d15b2c05521490 data/wilderness/loot_tables/blocks/overgrown_birch_wood.json
 778104856020aa93d3f23460e35f0d26a73ed974 data/wilderness/loot_tables/blocks/overgrown_oak_log.json
 80685ad68209319b824905601cbd995d57731f1e data/wilderness/loot_tables/blocks/overgrown_oak_wood.json
 c9d6b9e01c4a2c99ad82d96a9fb9d3b8e113d45d data/wilderness/loot_tables/blocks/overgrown_spruce_log.json
 113c8eade1f68a6227373b7506d16eb720c9257b data/wilderness/loot_tables/blocks/overgrown_spruce_wood.json
-e3acb96db966813c2b3d1a8283dde9bbc1a533f8 data/wilderness/loot_tables/blocks/shelf_mushroom.json
+4811b3f120d7f35e2d377099a82096a9a05c3a44 data/wilderness/loot_tables/blocks/shelf_fungi.json

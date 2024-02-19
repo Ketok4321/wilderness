@@ -28,7 +28,7 @@ public class WdBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> OVERGROWN_SPRUCE_WOOD = blockItem("overgrown_spruce_wood", () -> new RotatedPillarBlock(Properties.copy(Blocks.SPRUCE_WOOD)));
 
 
-    public static final RegistrySupplier<ShelfMushroomBlock> SHELF_MUSHROOM = blockItem("shelf_mushroom", () -> new ShelfMushroomBlock(Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<ShelfMushroomBlock> SHELF_FUNGI = blockItem("shelf_fungi", () -> new ShelfMushroomBlock(Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY)));
 
     public static void setup() {
         AxeItemHooks.addStrippable(OVERGROWN_OAK_LOG.get(), Blocks.OAK_LOG);

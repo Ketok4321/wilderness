@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "wilderness:block/shelf_fungi",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "wilderness:block/shelf_fungi"
+    },
+    "facing=south": {
+      "model": "wilderness:block/shelf_fungi",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "wilderness:block/shelf_fungi",
+      "y": 270
+    }
+  }
+}

@@ -1,14 +1,12 @@
 package xyz.ketok.wilderness.forge.data.client;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
 import xyz.ketok.wilderness.Wilderness;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import xyz.ketok.wilderness.registry.WdBlocks;
-import xyz.ketok.wilderness.registry.dynamic.WdBiomes;
 
 import static xyz.ketok.wilderness.forge.data.WdDataGenUtil.*;
 
@@ -21,7 +19,7 @@ public class WdItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         wdBlockItems().forEach(block -> withExistingParent(name(block).getPath(), prefix("block/", name(block)))); // These can be overwritten later
 
-        generated(WdBlocks.SHELF_MUSHROOM.get().asItem());
+        generated(WdBlocks.SHELF_FUNGI.get().asItem());
     }
 
     private void generated(Item item, ResourceLocation path) {

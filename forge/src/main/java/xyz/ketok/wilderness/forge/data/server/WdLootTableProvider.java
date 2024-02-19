@@ -2,9 +2,7 @@ package xyz.ketok.wilderness.forge.data.server;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import org.jetbrains.annotations.NotNull;
 import xyz.ketok.wilderness.forge.data.WdDataGenUtil;
 import net.minecraft.data.loot.LootTableProvider;
@@ -43,7 +41,7 @@ public class WdLootTableProvider extends LootTableProvider {
         protected void generate() {
             WdDataGenUtil.wdBlockItems().forEach(this::dropSelf); // These can be overwritten later
 
-            add(WdBlocks.SHELF_MUSHROOM.get(), createShearsOnlyDrop(WdBlocks.SHELF_MUSHROOM.get().asItem())); //TODO: Forge tool actions + fabric equivalent
+            add(WdBlocks.SHELF_FUNGI.get(), createShearsOnlyDrop(WdBlocks.SHELF_FUNGI.get().asItem())); //TODO: Forge tool actions + fabric equivalent
         }
 
         @Override

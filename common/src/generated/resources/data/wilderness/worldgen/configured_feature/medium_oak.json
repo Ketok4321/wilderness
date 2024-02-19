@@ -5,7 +5,7 @@
       {
         "type": "wilderness:block_on_log",
         "block": {
-          "Name": "wilderness:shelf_mushroom",
+          "Name": "wilderness:shelf_fungi",
           "Properties": {
             "facing": "north"
           }

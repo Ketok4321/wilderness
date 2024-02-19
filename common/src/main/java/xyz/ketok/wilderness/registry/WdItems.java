@@ -17,7 +17,7 @@ public class WdItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Wilderness.MOD_ID, Registries.ITEM);
 
     public static void setup() {
-        ComposterBlock.COMPOSTABLES.put(WdBlocks.SHELF_MUSHROOM.get().asItem(), 0.65F);
+        ComposterBlock.COMPOSTABLES.put(WdBlocks.SHELF_FUNGI.get().asItem(), 0.65F);
 
         CreativeTabRegistry.modifyBuiltin(BuiltInRegistries.CREATIVE_MODE_TAB.get(CreativeModeTabs.BUILDING_BLOCKS), (FeatureFlagSet flags, CreativeTabOutput output, boolean canUseGameMasterBlocks) -> {
             output.acceptAfter(Blocks.OAK_WOOD, WdBlocks.OVERGROWN_OAK_LOG.get());
@@ -33,7 +33,7 @@ public class WdItems {
             output.acceptAfter(Blocks.BIRCH_LOG, WdBlocks.OVERGROWN_BIRCH_LOG.get());
             output.acceptAfter(Blocks.SPRUCE_LOG, WdBlocks.OVERGROWN_SPRUCE_LOG.get());
 
-            output.acceptAfter(Items.WARPED_FUNGUS, WdBlocks.SHELF_MUSHROOM.get());
+            output.acceptAfter(Items.WARPED_FUNGUS, WdBlocks.SHELF_FUNGI.get());
         });
     }
 }

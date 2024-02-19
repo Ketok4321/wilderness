@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "wilderness:block/shelf_mushroom",
-		"particle": "wilderness:block/shelf_mushroom"
+		"1": "wilderness:block/shelf_fungi",
+		"particle": "wilderness:block/shelf_fungi"
 	},
 	"elements": [
 		{

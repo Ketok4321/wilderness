@@ -16,11 +16,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "wilderness:shelf_mushroom"
+          "name": "wilderness:shelf_fungi"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "wilderness:blocks/shelf_mushroom"
+  "random_sequence": "wilderness:blocks/shelf_fungi"
 }
