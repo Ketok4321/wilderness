@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "overgrown_log",
+  "ingredients": [
+    {
+      "item": "minecraft:spruce_wood"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "item": "wilderness:overgrown_spruce_wood"
+  }
+}

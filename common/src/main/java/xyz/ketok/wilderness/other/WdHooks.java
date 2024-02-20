@@ -1,6 +1,7 @@
 package xyz.ketok.wilderness.other;
 
 import com.google.common.collect.ImmutableMap;
+import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +16,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class WdHooks {
-    public static final Map<Block, Supplier<RotatedPillarBlock>> OVERGROWN_VARIANTS = new ImmutableMap.Builder<Block, Supplier<RotatedPillarBlock>>()
+    public static final Map<Block, RegistrySupplier<RotatedPillarBlock>> OVERGROWN_VARIANTS = new ImmutableMap.Builder<Block, RegistrySupplier<RotatedPillarBlock>>()
             .put(Blocks.OAK_LOG, WdBlocks.OVERGROWN_OAK_LOG)
             .put(Blocks.OAK_WOOD, WdBlocks.OVERGROWN_OAK_WOOD)
             .put(Blocks.BIRCH_LOG, WdBlocks.OVERGROWN_BIRCH_LOG)
