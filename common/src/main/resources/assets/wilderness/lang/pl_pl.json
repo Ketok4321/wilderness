@@ -1,0 +1,15 @@
+{
+  "biome.wilderness.old_growth_forest": "Starodrzew",
+  "biome.wilderness.mixed_forest": "Las mieszany",
+
+  "block.wilderness.overgrown_oak_log": "Porośnięty dębowy pień",
+  "block.wilderness.overgrown_oak_wood": "Porośnięte dębowe drewno",
+  "block.wilderness.overgrown_birch_log": "Porośnięty brzozowy pień",
+  "block.wilderness.overgrown_birch_wood": "Porośnięte brzozowe drewno",
+  "block.wilderness.overgrown_spruce_log": "Porośnięty świerkowy pień",
+  "block.wilderness.overgrown_spruce_wood": "Porośnięte świerkowe drewno",
+
+  "block.wilderness.shelf_fungi": "Huba",
+
+  "subtitles.wilderness.item.axe.unmoss": "Siekiera zeskrobuje mech"
+}
