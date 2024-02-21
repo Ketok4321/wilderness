@@ -11,7 +11,7 @@ authors = "Ketok"
 description = '''
 A mod that enhances minecraft's forests by adding new, wilder variants of them
 '''
-#logoFile = ""
+logoFile = "assets/wilderness/icon.png"
 
 [[dependencies.wilderness]]
 modId = "forge"
