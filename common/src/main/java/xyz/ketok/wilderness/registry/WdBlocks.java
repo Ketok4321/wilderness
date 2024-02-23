@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import xyz.ketok.wilderness.Wilderness;
-import xyz.ketok.wilderness.block.ShelfMushroomBlock;
+import xyz.ketok.wilderness.block.ShelfFungiBlock;
 
 import java.util.function.Supplier;
 
@@ -28,7 +28,7 @@ public class WdBlocks {
     public static final RegistrySupplier<RotatedPillarBlock> OVERGROWN_SPRUCE_WOOD = blockItem("overgrown_spruce_wood", () -> new RotatedPillarBlock(Properties.copy(Blocks.SPRUCE_WOOD)));
 
 
-    public static final RegistrySupplier<ShelfMushroomBlock> SHELF_FUNGI = blockItem("shelf_fungi", () -> new ShelfMushroomBlock(Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY)));
+    public static final RegistrySupplier<ShelfFungiBlock> SHELF_FUNGI = blockItem("shelf_fungi", () -> new ShelfFungiBlock(Properties.of().mapColor(MapColor.COLOR_BROWN).noCollission().instabreak().sound(SoundType.FUNGUS).pushReaction(PushReaction.DESTROY)));
 
     public static void setup() {
         AxeItemHooks.addStrippable(OVERGROWN_OAK_LOG.get(), Blocks.OAK_LOG);

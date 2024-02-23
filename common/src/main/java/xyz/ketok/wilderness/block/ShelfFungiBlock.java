@@ -15,13 +15,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class ShelfMushroomBlock extends HorizontalDirectionalBlock {
+public class ShelfFungiBlock extends HorizontalDirectionalBlock {
     public static final VoxelShape SHAPE_NORTH = Block.box(2, 2, 14, 14, 14, 16);;
     public static final VoxelShape SHAPE_SOUTH = Block.box(2, 2, 0, 14, 14, 2);
     public static final VoxelShape SHAPE_WEST = Block.box(14, 2, 2, 16, 14, 14);
     public static final VoxelShape SHAPE_EAST = Block.box(0, 2, 2, 2, 14, 14);
 
-    public ShelfMushroomBlock(Properties properties) {
+    public ShelfFungiBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }

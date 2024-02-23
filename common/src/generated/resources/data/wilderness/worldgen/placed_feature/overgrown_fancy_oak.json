@@ -1,5 +1,5 @@
 {
-  "feature": "wilderness:mossy_fancy_oak",
+  "feature": "wilderness:overgrown_fancy_oak",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
