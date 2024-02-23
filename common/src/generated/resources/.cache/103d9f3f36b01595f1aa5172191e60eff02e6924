@@ -1,6 +1,6 @@
-// 1.20.1	2024-02-23T16:28:54.497840675	Registries
+// 1.20.1	2024-02-23T20:19:33.326170218	Registries
 42cf9109cfc781752a15e24e858c054616371d34 data/wilderness/worldgen/biome/mixed_forest.json
-42b24b8b4cc215ad4a4ee45a84cac0931f83d34d data/wilderness/worldgen/biome/old_growth_forest.json
+d93c027ea5e9fbc7dfaa2d0873e31d95e3b8a5f8 data/wilderness/worldgen/biome/old_growth_forest.json
 57735111b2d078ca7e0269f46962d8a4244d0c04 data/wilderness/worldgen/configured_feature/brown_red_mushroom_patch.json
 f97397a4c6274cc4ceaf08f12c018719ed5b2316 data/wilderness/worldgen/configured_feature/fallen_birch.json
 b79d2418c583874539c9ed15fca04f8594549eab data/wilderness/worldgen/configured_feature/fallen_oak.json

@@ -1,6 +1,7 @@
 package xyz.ketok.wilderness.forge.data.server.registry;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.MobSpawnSettings;
@@ -29,7 +30,7 @@ public class WdBiomeProvider {
         addDefaultOres(generation);
         addDefaultSoftDisks(generation);
         addDefaultFlowers(generation);
-        addForestGrass(generation);
+        generation.addFeature(VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL); // To make it less confusing i don't use the helper method as addShatteredSavannaGrass adds normal grass lol (unlike addNormalGrass which adds badlands grass)
         generation.addFeature(VEGETAL_DECORATION, PATCH_TALL_GRASS);
         generation.addFeature(VEGETAL_DECORATION, PATCH_DEAD_BUSH);
         addDefaultExtraVegetation(generation);
