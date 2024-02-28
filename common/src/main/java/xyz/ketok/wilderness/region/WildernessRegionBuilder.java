@@ -29,7 +29,7 @@ public class WildernessRegionBuilder {
     private static final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
             {null, null, null, null, null}, // ICY
             {null, null, WdBiomes.MIXED_FOREST, null, null}, // COOL
-            {null, null, null, null, WdBiomes.OLD_GROWTH_FOREST}, // NEUTRAL
+            {null, null, null, WdBiomes.OLD_GROWTH_FOREST, WdBiomes.OLD_GROWTH_FOREST}, // NEUTRAL
             {null, null, null, null, null}, // WARM`
             {null, null, null, null, null} // HOT
     };
@@ -37,7 +37,7 @@ public class WildernessRegionBuilder {
     private static final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
             {null, null, null, null, null}, // ICY
             {null, null, null, null, null}, // COOL
-            {null, null, null, null, WdBiomes.MIXED_FOREST}, // NEUTRAL
+            {null, null, null, WdBiomes.MIXED_FOREST, null}, // NEUTRAL
             {null, null, null, null, null}, // WARM
             {null, null, null, null, null} // HOT
     };
