@@ -91,17 +91,45 @@ public class WildernessRegionBuilder {
     private void addInlandBiomes(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer) {
         this.addMidSlice(consumer, Climate.Parameter.span(-1.0F, -0.93333334F));
         this.addHighSlice(consumer, Climate.Parameter.span(-0.93333334F, -0.7666667F));
-        //this.addPeaks(consumer, Climate.Parameter.span(-0.7666667F, -0.56666666F));
+        this.addPeaks(consumer, Climate.Parameter.span(-0.7666667F, -0.56666666F));
         this.addHighSlice(consumer, Climate.Parameter.span(-0.56666666F, -0.4F));
         this.addMidSlice(consumer, Climate.Parameter.span(-0.4F, -0.26666668F));
         this.addLowSlice(consumer, Climate.Parameter.span(-0.26666668F, -0.05F));
-        //this.addValleys(consumer, Climate.Parameter.span(-0.05F, 0.05F));
+        this.addValleys(consumer, Climate.Parameter.span(-0.05F, 0.05F));
         this.addLowSlice(consumer, Climate.Parameter.span(0.05F, 0.26666668F));
         this.addMidSlice(consumer, Climate.Parameter.span(0.26666668F, 0.4F));
         this.addHighSlice(consumer, Climate.Parameter.span(0.4F, 0.56666666F));
-        //this.addPeaks(consumer, Climate.Parameter.span(0.56666666F, 0.7666667F));
+        this.addPeaks(consumer, Climate.Parameter.span(0.56666666F, 0.7666667F));
         this.addHighSlice(consumer, Climate.Parameter.span(0.7666667F, 0.93333334F));
         this.addMidSlice(consumer, Climate.Parameter.span(0.93333334F, 1.0F));
+    }
+
+    private void addPeaks(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter param) {
+        for(int i = 0; i < this.temperatures.length; ++i) {
+            Climate.Parameter parameter = this.temperatures[i];
+
+            for(int j = 0; j < this.humidities.length; ++j) {
+                Climate.Parameter parameter2 = this.humidities[j];
+                ResourceKey<Biome> resourceKey = this.pickMiddleBiome(i, j, param);
+                ResourceKey<Biome> resourceKey2 = this.pickMiddleBiomeOrBadlandsIfHot(i, j, param);
+                ResourceKey<Biome> resourceKey3 = this.pickMiddleBiomeOrBadlandsIfHotOrSlopeIfCold(i, j, param);
+                ResourceKey<Biome> resourceKey4 = this.pickPlateauBiome(i, j, param);
+                ResourceKey<Biome> resourceKey5 = this.pickShatteredBiome(i, j, param);
+                ResourceKey<Biome> resourceKey6 = this.maybePickWindsweptSavannaBiome(i, j, param, resourceKey5);
+                ResourceKey<Biome> resourceKey7 = this.pickPeakBiome(i, j, param);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[0], param, 0.0F, resourceKey7);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.nearInlandContinentalness), this.erosions[1], param, 0.0F, resourceKey3);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[1], param, 0.0F, resourceKey7);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.nearInlandContinentalness), Climate.Parameter.span(this.erosions[2], this.erosions[3]), param, 0.0F, resourceKey);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[2], param, 0.0F, resourceKey4);
+                this.addSurfaceBiome(consumer, parameter, parameter2, this.midInlandContinentalness, this.erosions[3], param, 0.0F, resourceKey2);
+                this.addSurfaceBiome(consumer, parameter, parameter2, this.farInlandContinentalness, this.erosions[3], param, 0.0F, resourceKey4);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[4], param, 0.0F, resourceKey);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.nearInlandContinentalness), this.erosions[5], param, 0.0F, resourceKey6);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[5], param, 0.0F, resourceKey5);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[6], param, 0.0F, resourceKey);
+            }
+        }
     }
 
     private void addHighSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter param) {
@@ -133,7 +161,6 @@ public class WildernessRegionBuilder {
                 this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[6], param, 0.0F, resourceKey);
             }
         }
-
     }
 
     private void addMidSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter param) {
@@ -180,7 +207,6 @@ public class WildernessRegionBuilder {
                 }
             }
         }
-
     }
 
     private void addLowSlice(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter param) {
@@ -210,7 +236,18 @@ public class WildernessRegionBuilder {
                 }
             }
         }
+    }
 
+    private void addValleys(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, Climate.Parameter param) {
+        for(int i = 0; i < this.temperatures.length; ++i) {
+            Climate.Parameter parameter = this.temperatures[i];
+
+            for(int j = 0; j < this.humidities.length; ++j) {
+                Climate.Parameter parameter2 = this.humidities[j];
+                ResourceKey<Biome> resourceKey = this.pickMiddleBiomeOrBadlandsIfHot(i, j, param);
+                this.addSurfaceBiome(consumer, parameter, parameter2, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[0], this.erosions[1]), param, 0.0F, resourceKey);
+            }
+        }
     }
 
     private ResourceKey<Biome> pickMiddleBiome(int temperature, int humidity, Climate.Parameter param) {
