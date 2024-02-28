@@ -1,5 +1,6 @@
-// 1.20.1	2024-02-20T17:17:31.440816543	Tags for minecraft:block mod id wilderness
+// 1.20.1	2024-02-28T23:29:34.02895673	Tags for minecraft:block mod id wilderness
 5247d59c41c7260967d456b844628acc7b99e4b2 data/minecraft/tags/blocks/birch_logs.json
 d03b69f44055614f128e046c3506f669eb5746ee data/minecraft/tags/blocks/oak_logs.json
+ba40e9a7f991a9e0c687e17fdd36b54bbcc73fe4 data/minecraft/tags/blocks/replaceable_by_trees.json
 c24bba431669e5412e51e5f18abb675fcc169e4a data/minecraft/tags/blocks/spruce_logs.json
 2830a0e25fdec1c20ffc05ba23fb57a79f623257 data/wilderness/tags/blocks/overgrown_logs.json
