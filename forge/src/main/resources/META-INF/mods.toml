@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "Wilderness"
 authors = "Ketok"
 description = '''
-A mod that enhances minecraft's forests by adding new, wilder variants of them
+Wilderness enhances minecraft's forests by adding new, wilder variants of them
 '''
 logoFile = "assets/wilderness/icon.png"
 

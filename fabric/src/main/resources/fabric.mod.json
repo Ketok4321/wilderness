@@ -3,7 +3,7 @@
   "id": "wilderness",
   "version": "${version}",
   "name": "Wilderness",
-  "description": "A mod that enhances minecraft's forests by adding new, wilder variants of them",
+  "description": "Wilderness enhances minecraft's forests by adding new, wilder variants of them",
   "authors": [
     "Ketok"
   ],
