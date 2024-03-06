@@ -36,6 +36,15 @@
         "projection": "rigid",
         "processors": "minecraft:empty"
       }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "wilderness:abandoned_hut_5",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
     }
   ]
 }
