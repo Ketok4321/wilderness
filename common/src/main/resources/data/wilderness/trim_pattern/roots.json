@@ -1,0 +1,7 @@
+{
+  "asset_id": "wilderness:roots",
+  "description": {
+    "translate": "trim_pattern.wilderness.roots"
+  },
+  "template_item": "wilderness:roots_armor_trim_smithing_template"
+}

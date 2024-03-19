@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import xyz.ketok.wilderness.Wilderness;
+import xyz.ketok.wilderness.registry.WdItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -23,5 +24,7 @@ public class WdItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.OAK_LOGS, ItemTags.OAK_LOGS);
         copy(BlockTags.BIRCH_LOGS, ItemTags.BIRCH_LOGS);
         copy(BlockTags.SPRUCE_LOGS, ItemTags.SPRUCE_LOGS);
+
+        tag(ItemTags.TRIM_TEMPLATES).add(WdItems.ROOTS_ARMOR_TRIM_SMITHING_TEMPLATE.get());
     }
 }
