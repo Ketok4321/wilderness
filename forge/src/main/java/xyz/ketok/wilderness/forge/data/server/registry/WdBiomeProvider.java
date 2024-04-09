@@ -10,7 +10,6 @@ import net.minecraft.data.worldgen.BootstapContext;
 
 import static xyz.ketok.wilderness.registry.dynamic.WdBiomes.*;
 import static xyz.ketok.wilderness.registry.dynamic.WdPlacedFeatures.*;
-import static net.minecraft.data.worldgen.placement.VegetationPlacements.*;
 import static net.minecraft.data.worldgen.BiomeDefaultFeatures.*;
 import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.*;
 import static net.minecraft.world.entity.EntityType.*;
@@ -30,9 +29,9 @@ public class WdBiomeProvider {
         addDefaultOres(generation);
         addDefaultSoftDisks(generation);
         addDefaultFlowers(generation);
-        generation.addFeature(VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL); // To make it less confusing i don't use the helper method as addShatteredSavannaGrass adds normal grass lol (unlike addNormalGrass which adds badlands grass)
-        generation.addFeature(VEGETAL_DECORATION, PATCH_TALL_GRASS);
-        generation.addFeature(VEGETAL_DECORATION, PATCH_DEAD_BUSH);
+        generation.addFeature(VEGETAL_DECORATION, PATCH_GRASS_OLD_GROWTH);
+        generation.addFeature(VEGETAL_DECORATION, PATCH_TALL_GRASS_OLD_GROWTH);
+        generation.addFeature(VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
         addDefaultExtraVegetation(generation);
         generation.addFeature(VEGETAL_DECORATION, TREES_OLD_GROWTH_FOREST);
         generation.addFeature(VEGETAL_DECORATION, BROWN_RED_MUSHROOM_PATCH);
@@ -59,7 +58,7 @@ public class WdBiomeProvider {
         addDefaultSoftDisks(generation);
         addDefaultFlowers(generation);
         addForestGrass(generation);
-        generation.addFeature(VEGETAL_DECORATION, PATCH_DEAD_BUSH_2);
+        generation.addFeature(VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH_2);
         addDefaultMushrooms(generation);
         addDefaultExtraVegetation(generation);
         generation.addFeature(VEGETAL_DECORATION, TREES_MIXED_FOREST);
