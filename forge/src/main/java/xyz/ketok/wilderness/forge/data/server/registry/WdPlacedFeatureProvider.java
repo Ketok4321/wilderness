@@ -4,7 +4,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.MiscOverworldFeatures;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
@@ -37,6 +39,9 @@ public class WdPlacedFeatureProvider {
         context.register(PATCH_COARSE_DIRT, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.PATCH_COARSE_DIRT), CountPlacement.of(2)));
         context.register(PATCH_PODZOL, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.PATCH_PODZOL), CountPlacement.of(1)));
         context.register(PATCH_MOSS, surfaceFeature(configured.getOrThrow(WdConfiguredFeatures.PATCH_MOSS), CountPlacement.of(2)));
+
+        context.register(PATCH_GRASS_OLD_GROWTH, new PlacedFeature(configured.getOrThrow(VegetationFeatures.PATCH_GRASS), VegetationPlacements.worldSurfaceSquaredWithCount(5)));
+        context.register(PATCH_TALL_GRASS_OLD_GROWTH, new PlacedFeature(configured.getOrThrow(VegetationFeatures.PATCH_TALL_GRASS), List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
     }
 
     private static PlacedFeature surfaceFeature(Holder<ConfiguredFeature<?, ?>> feature, PlacementModifier countOrRarity, PlacementModifier... placementModifiers) {

@@ -24,6 +24,9 @@ public class WdPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PATCH_PODZOL = key("patch_podzol");
     public static final ResourceKey<PlacedFeature> PATCH_MOSS = key("patch_moss");
 
+    public static final ResourceKey<PlacedFeature> PATCH_GRASS_OLD_GROWTH = key("patch_grass_old_growth");
+    public static final ResourceKey<PlacedFeature> PATCH_TALL_GRASS_OLD_GROWTH = key("patch_tall_grass_old_growth");
+
     private static ResourceKey<PlacedFeature> key(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Wilderness.MOD_ID, name));
     }
