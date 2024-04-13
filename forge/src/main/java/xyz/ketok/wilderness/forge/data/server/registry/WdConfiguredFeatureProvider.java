@@ -135,13 +135,13 @@ public class WdConfiguredFeatureProvider {
         ));
     }
 
-    //TODO: Use Feature.VEGETATION_PATCH?
     private static ConfiguredFeature<?, ?> surfacePatch(Block block) {
         return new ConfiguredFeature<>(Feature.ORE,
                 new OreConfiguration(
                         new BlockMatchTest(Blocks.GRASS_BLOCK),
                         block.defaultBlockState(),
-                        33
+                        33,
+                        0.3F
                 )
         );
     }
