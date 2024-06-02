@@ -1,0 +1,13 @@
+{
+  "biome.wilderness.old_growth_forest": "Одвічний ліс",
+  "biome.wilderness.mixed_forest": "Мішаний ліс",
+  "block.wilderness.overgrown_oak_log": "Заросла дубова колода",
+  "block.wilderness.overgrown_oak_wood": "Заросла дубова деревина",
+  "block.wilderness.overgrown_birch_log": "Заросла березова колода",
+  "block.wilderness.overgrown_birch_wood": "Заросла березова деревина",
+  "block.wilderness.overgrown_spruce_log": "Заросла смерекова колода",
+  "block.wilderness.overgrown_spruce_wood": "Заросла смерекова деревина",
+  "block.wilderness.shelf_fungi": "Шельфовий гриб",
+  "trim_pattern.wilderness.roots": "Орнамент обладунків «Коріння»",
+  "subtitles.wilderness.item.axe.unmoss": "Сокира зішкрібає мох"
+}
